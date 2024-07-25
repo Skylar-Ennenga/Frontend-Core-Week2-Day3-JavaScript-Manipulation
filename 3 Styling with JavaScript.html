@@ -71,7 +71,7 @@ Expected Outcomes:
         <main>
             
             <div class="container">
-                <div id="container-box">
+                <div id="container-box" onclick="changeColor()" >
                     <h1 class="element" id="heading1">Heading 1</h1>
                     <p class="element" id="paragraph">Paragraph</p>
                     <img src="https://via.placeholder.com/100" alt="Placeholder Image" class="element" id="image">
@@ -93,6 +93,10 @@ Expected Outcomes:
             const image = document.getElementById("image");
             const button = document.getElementById("button");
             const link = document.getElementById("link");
+            
+            function changeColor(){ 
+            document.getElementById("container-box").style.backgroundColor = "lightblue"; 
+            }
 
             heading1.style.backgroundColor = "#4682b4";
 
