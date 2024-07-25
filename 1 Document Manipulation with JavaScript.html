@@ -1,0 +1,66 @@
+<!-- 1. Document Manipulation with JavaScript
+
+Objective: The aim of this assignment is to enhance proficiency in manipulating HTML documents dynamically using JavaScript, focusing on the manipulation of arrays and objects to modify document content and structure.
+
+Problem Statement: You are tasked with creating a web page that dynamically updates its content based on user interaction. The page should utilize JavaScript to manipulate the document structure and content using arrays and objects.
+
+Task 1: Create an array containing information about different products, including their names, prices, and descriptions.
+
+let products = [
+    { name: "Laptop", price: 999.99, description: "Powerful computing on the go" },
+    { name: "Smartphone", price: 699.99, description: "Stay connected wherever you are" },
+    { name: "Headphones", price: 149.99, description: "Immersive audio experience" }
+];
+
+Task 2: Write a function to display the product information on the webpage dynamically.
+
+Task 3: Implement an event listener to trigger the display of products when the page loads.
+
+Expected Outcomes:
+
+    Successful creation of an array containing product information.
+
+    Proper display of product information on the webpage using JavaScript.
+
+    Implementation of an event listener to trigger the display of products upon page load. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Manipulation with JavaScript</title>
+</head>
+<body>
+    <h1>Product Information</h1>
+    <ul id="product-list"></ul>
+
+    <script>
+
+        let products = [
+            { name: "Laptop", price: 999.99, description: "Powerful computing on the go" },
+            { name: "Smartphone", price: 699.99, description: "Stay connected wherever you are" },
+            { name: "Headphones", price: 149.99, description: "Immersive audio experience" },
+        ];
+
+        function displayProducts() {
+            // Sets up ul above to be as a variable to be called later to add the list items to
+            let prodList = document.getElementById("product-list");
+        
+
+            products.forEach(product => {
+                // Creates a list item for each product in the array
+                let prodItem = document.createElement("li");
+                // Adds the product name price and description to the list item
+                prodItem.innerHTML = `<strong>${product.name}:</strong> $${product.price} - ${product.description}`;
+                // Appends the list item to the ul element taht we set up above
+                prodList.appendChild(prodItem);
+            });
+        }
+
+        // Event listener to trigger the display of products on page load
+        window.addEventListener("load", displayProducts);
+    </script>
+</body>
+</html>
